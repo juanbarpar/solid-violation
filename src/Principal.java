@@ -1,20 +1,22 @@
 public class Principal {
 
   public static void main(String[] args) {
-    Envio[] envios = {
-        new Envio("Municipal",5000),
-        new Envio("Intermunicipal",15000),
-        new Envio("Internacional",25000)
-    };
-    imprimirTiempoDeEnvio(envios);
-    imprimirTiempoDeEnvio(envios);
+
+    Printer printer = new Printer();
+    printer.imprimirTiempoDeEnvio(CapturaDeEnvio());
+
   }
 
-  public static void imprimirTiempoDeEnvio(Envio[] envios){
-    for (Envio coche : envios) {
-      if(coche.tipo.equals("Municipal")) System.out.println("Tiempo envio 12 horas");
-      if(coche.tipo.equals("Intermunicipal")) System.out.println("Tiempo envio 36 horas");
-      if(coche.tipo.equals("Internacional")) System.out.println("Tiempo envio 90 horas");
-    }
+  private static Envio[] CapturaDeEnvio(){
+
+    //Se realiza la captura de envios
+
+    Envio[] envios = {
+            new EnvioMunicipal("Municipal",5000),
+            new EnvioIntermunicipal("Intermunicipal",15000),
+            new EnvioInternacional("Internacional",25000)
+    };
+
+    return envios;
   }
 }

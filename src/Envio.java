@@ -1,18 +1,16 @@
-public class Envio {
-
-  String tipo;
-  Integer precio;
-
-  Envio(String tipo, Integer precio) {
-    this.tipo = tipo;
+public class Envio extends TipoEnvio implements TiempoEnvio{
+  private Integer precio;
+  public Envio(String tipo, Integer precio) {
+    super(tipo);
     this.precio = precio;
   }
 
-  String getTipoEnvio() {
-    return this.tipo;
+  public Envio( ) {
+
   }
 
-  void crearTipoEnvio(Envio envio) {
-    //Save Envio DB
+  @Override
+  public String getTiempo() {
+    return null;
   }
 }
